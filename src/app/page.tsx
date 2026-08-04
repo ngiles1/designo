@@ -1,69 +1,105 @@
 import Image from "next/image";
+import Link from "next/link";
+import TriItem from "@/app/_components/tri-item";
+import BigLink from "./_components/big-link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <section className="text-white bg-peach sm:rounded-2xl p-16 mb-18">
+        <h1 className="font-medium text-[3rem] leading-[1] max-w-[33.75rem] mb-4">
+          Award-winning custom designs and digital branding solutions
+        </h1>
+        <p className="leading-[1.625] max-w-[28rem] mb-4">
+          With over 10 years in the industry, we are experienced in creating
+          fuly responsive websites, app design and engaging brand experiences.
+          Find out more about our services.
+        </p>
+        <Link href="/">Learn more</Link>
+      </section>
+
+      <section className="grid grid-cols-2 gap-8 mb-18">
+        <div className="col-span-1">
+          <BigLink
+            image="/assets/home/desktop/image-web-design-large.jpg"
+            title="Web Design" href="/"
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+        
+        <div className="col-span-1 flex flex-col gap-8">
+          <div>
+            <BigLink
+              image="/assets/home/desktop/image-app-design.jpg"
+              title="App Design" href="/"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          <div>
+            <BigLink
+              image="/assets/home/desktop/image-graphic-design.jpg"
+              title="Graphic Design" href="/"
+            />
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section className="grid grid-cols-3 gap-8 mb-12">
+        <div className="col-span-1">
+          <TriItem
+            bgRot={0}
+            image="/assets/home/desktop/illustration-passionate.svg"
+            title="Passionate"
+          >
+            <p className="text-dark-grey leading-[1.625]">
+              Each project starts with an in-depth brand research to ensure we
+              only create products that serve a purpose. We merge art, design,
+              and technology into exciting new solutions.
+            </p>
+          </TriItem>
+        </div>
+
+        <div className="col-span-1">
+          <TriItem
+            bgRot={270}
+            image="/assets/home/desktop/illustration-resourceful.svg"
+            title="Resourceful"
+          >
+            <p className="text-dark-grey leading-[1.625]">
+              Everything that we do has a strategic purpose. We use an agile
+              approach in all of our projects and value customer collaboration.
+              It guarantees superior results that fulfill our clients’ needs.
+            </p>
+          </TriItem>
+        </div>
+
+        <div className="col-span-1">
+          <TriItem
+            bgRot={90}
+            image="/assets/home/desktop/illustration-friendly.svg"
+            title="Friendly"
+          >
+            <p className="text-dark-grey leading-[1.625]">
+              Each project starts with an in-depth brand research to ensure we
+              only create products that serve a purpose. We merge art, design
+              and technology into exciting new solutions.
+            </p>
+          </TriItem>
+        </div>
+      </section>
+
+      <div className="text-white bg-peach flex items-center justify-between p-16 sm:rounded-2xl">
+        <div>
+          <div className="font-medium text-[2.5rem] leading-[1] max-w-[16.75rem] mb-6">
+            Let's talk about your project
+          </div>
+          <div className="max-w-[18.25rem]">
+            Ready to take it to the next level? Contact us today and find out
+            how our expertise can help your business grow.
+          </div>
+        </div>
+
+        <Link href="/">Get in touch</Link>
+      </div>
     </div>
   );
 }

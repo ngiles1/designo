@@ -1,6 +1,47 @@
 @import "tailwindcss";
 
+@theme {
+  --color-peach: #E7816B;
+  --color-light-peach: #FFAD9B;
+  --color-black: #1D1C1E;
+  --color-dark-grey: #333136;
+  --color-light-grey: #F1F3F5;
+}
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/jost-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* jost-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/jost-v20-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 :root {
+  --peach: hsl(11, 73%, 66%);
+  --light-peach: hsl(11, 100%, 80%);
+  --black: hsl(270, 3%, 11%);
+  --dark-grey: hsl(264, 5%, 20%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(210, 17%, 95%);
+
+  --font-family: "Jost", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+
+  color: var(--dark-grey);
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +64,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
