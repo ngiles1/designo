@@ -1,9 +1,52 @@
-import Image from "next/image";
-import Link from "next/link";
-// import styles from "./page.module.css";
+import clsx from "clsx";
 
 export default function WebDesign() {
   return (
-    <div>web design page</div>
-  )
+    <div>
+      <section
+        className={clsx(
+          "text-white",
+          "text-center",
+          "bg-peach",
+          "flex",
+          "flex-col",
+          "items-center",
+          "justify-center",
+          "p-16",
+          "mb-18",
+          "sm:rounded-2xl",
+          "overflow-hidden",
+          "relative",
+        )}
+      >
+        <img
+          src="/assets/web-design/desktop/bg-pattern-intro-web.svg"
+          alt=""
+          className={clsx(
+            "absolute",
+            "inset-0",
+            "w-full",
+            "h-full",
+            "object-cover"
+          )}
+        />
+        <div className="z-1">
+          <h1
+            className={clsx(
+              "font-medium",
+              "text-[2.5rem]",
+              "leading-[1]",
+              "mb-6",
+            )}
+          >
+            Web Design
+          </h1>
+          <p className="leading-[1.625] max-w-[28rem]">
+            We build websites that serve as powerful marketing tools and bring
+            memorable brand experiences.
+          </p>
+        </div>
+      </section>
+    </div>
+  );
 };
