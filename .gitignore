@@ -40,6 +40,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local Figma data cache (see docs/figma/README.md)
+/docs/figma/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
