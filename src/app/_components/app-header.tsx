@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 
 export default function AppHeader() {
   const [mobMenuOpen, setMobMenuOpen] = useState<boolean>(false);
@@ -38,14 +39,16 @@ export default function AppHeader() {
         </button>
 
         <nav className="max-sm:hidden">
-          <ul className="
-            text-dark-grey
-            text-[14px]
-            uppercase
-            tracking-[2px]
-            flex
-            gap-8
-          ">
+          <ul
+            className={clsx(
+              "text-dark-grey",
+              "text-[14px]",
+              "uppercase",
+              "tracking-[2px]",
+              "flex",
+              "gap-8",
+            )}
+          >
             <li className="hover:text-peach">
               <Link href="/about">Our company</Link>
             </li>
@@ -59,38 +62,40 @@ export default function AppHeader() {
         </nav>
       </div>
       <div
-        className={`
-          fixed
-          inset-x-0
-          top-18
-          bottom-0
-          z-1
-          bg-black/50
-          transition-opacity
-          sm:hidden
-          ${mobMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-        `}
+        className={clsx(
+          "fixed",
+          "inset-x-0",
+          "top-18",
+          "bottom-0",
+          "z-1",
+          "bg-black/50",
+          "transition-opacity",
+          "sm:hidden",
+          mobMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none",
+        )}
         onClick={toggleMobMenu}
       >
         <nav
-          className={`
-            bg-black
-            px-6
-            py-12
-            transition-transform
-            ${mobMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-          `}
+          className={clsx(
+            "bg-black",
+            "px-6",
+            "py-12",
+            "transition-transform",
+            mobMenuOpen ? "translate-x-0" : "translate-x-full",
+          )}
           onClick={(e) => e.stopPropagation()}
         >
-          <ul className="
-            text-white
-            text-2xl
-            uppercase
-            tracking-[2px]
-            flex
-            flex-col
-            gap-8
-          ">
+          <ul
+            className={clsx(
+              "text-white",
+              "text-2xl",
+              "uppercase",
+              "tracking-[2px]",
+              "flex",
+              "flex-col",
+              "gap-8",
+            )}
+          >
             <li className="hover:text-peach">
               <Link href="/about" onClick={toggleMobMenu}>Our company</Link>
             </li>

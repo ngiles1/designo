@@ -1,4 +1,5 @@
 import Link from "next/link";
+import clsx from "clsx";
 
 type BigLinkProps = {
   image: string;
@@ -10,18 +11,18 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
   return (
     <Link
       href="/"
-      className="
-        text-white
-        text-center
-        flex
-        items-center
-        justify-center
-        h-full
-        py-32
-        rounded-2xl
-        relative
-        overflow-hidden
-      "
+      className={clsx(
+        "text-white",
+        "text-center",
+        "flex",
+        "items-center",
+        "justify-center",
+        "h-full",
+        "py-32",
+        "rounded-2xl",
+        "relative",
+        "overflow-hidden",
+      )}
     >
       <img
         src={image}
@@ -29,14 +30,14 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
       />
       <div>
         <div
-          className="
-            uppercase
-            font-medium
-            text-[2.5rem]
-            tracking-[2px]
-            leading-[1.2]
-            mb-6
-          "
+          className={clsx(
+            "uppercase",
+            "font-medium",
+            "text-[2.5rem]",
+            "tracking-[2px]",
+            "leading-[1.2]",
+            "mb-6",
+          )}
         >
           {title}
         </div>
