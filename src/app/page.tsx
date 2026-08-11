@@ -3,6 +3,7 @@ import clsx from "clsx";
 import TriItem from "@/app/_components/tri-item";
 import BigLink from "./_components/big-link";
 import LinkButton from "./_components/link-button";
+import CtaBanner from "./_components/cta-banner";
 
 export default function Home() {
   return (
@@ -168,39 +169,7 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="max-sm:px-2 relative -mb-24">
-        <div
-          className={clsx(
-            "text-white",
-            "bg-peach",
-            "flex",
-            "items-center",
-            "justify-between",
-            "p-16",
-            "rounded-2xl",
-          )}
-        >
-          <div>
-            <div
-              className={clsx(
-                "font-medium",
-                "text-[2.5rem]",
-                "leading-[1]",
-                "max-w-[16.75rem]",
-                "mb-6",
-              )}
-            >
-              Let's talk about your project
-            </div>
-            <div className="max-w-[18.25rem]">
-              Ready to take it to the next level? Contact us today and find out
-              how our expertise can help your business grow.
-            </div>
-          </div>
-
-          <LinkButton href="/">Get in touch</LinkButton>
-        </div>
-      </section>
+      <CtaBanner />
     </div>
   );
 }

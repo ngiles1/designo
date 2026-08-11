@@ -1,5 +1,7 @@
 import clsx from "clsx";
 import ProjectCard from "@/app/_components/project-card";
+import BigLink from "@/app/_components/big-link";
+import CtaBanner from "@/app/_components/cta-banner";
 
 const projects = [
   {
@@ -82,6 +84,30 @@ export default function GraphicDesign() {
           <ProjectCard key={project.title} {...project} />
         ))}
       </section>
+
+      <section
+        className={clsx(
+          "grid",
+          "grid-cols-1",
+          "sm:grid-cols-2",
+          "gap-8",
+          "max-sm:px-2",
+          "mb-18",
+        )}
+      >
+        <BigLink
+          image="/assets/home/desktop/image-app-design.jpg"
+          title="App Design"
+          href="/app-design"
+        />
+        <BigLink
+          image="/assets/home/desktop/image-web-design-small.jpg"
+          title="Web Design"
+          href="/web-design"
+        />
+      </section>
+
+      <CtaBanner />
     </div>
   );
 };

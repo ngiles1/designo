@@ -1,4 +1,35 @@
 import clsx from "clsx";
+import ProjectCard from "@/app/_components/project-card";
+import BigLink from "@/app/_components/big-link";
+import CtaBanner from "@/app/_components/cta-banner";
+
+const projects = [
+  {
+    image: "/assets/app-design/desktop/image-airfilter.jpg",
+    title: "Airfilter",
+    description: "Solving the problem of poor indoor air quality by filtering the air",
+  },
+  {
+    image: "/assets/app-design/desktop/image-eyecam.jpg",
+    title: "Eyecam",
+    description: "Product that lets you edit your favorite photos and videos at any time",
+  },
+  {
+    image: "/assets/app-design/desktop/image-faceit.jpg",
+    title: "Faceit",
+    description: "Get to meet your favorite internet superstar with the faceit app",
+  },
+  {
+    image: "/assets/app-design/desktop/image-todo.jpg",
+    title: "Todo",
+    description: "A todo app that features cloud sync with light and dark mode",
+  },
+  {
+    image: "/assets/app-design/desktop/image-loopstudios.jpg",
+    title: "Loopstudios",
+    description: "A VR experience app made for Loopstudios",
+  },
+];
 
 export default function AppDesign() {
   return (
@@ -47,6 +78,46 @@ export default function AppDesign() {
           </p>
         </div>
       </section>
+
+      <section
+        className={clsx(
+          "grid",
+          "grid-cols-1",
+          "sm:grid-cols-2",
+          "lg:grid-cols-3",
+          "gap-8",
+          "max-sm:px-2",
+          "mb-18",
+        )}
+      >
+        {projects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
+      </section>
+
+      <section
+        className={clsx(
+          "grid",
+          "grid-cols-1",
+          "sm:grid-cols-2",
+          "gap-8",
+          "max-sm:px-2",
+          "mb-18",
+        )}
+      >
+        <BigLink
+          image="/assets/home/desktop/image-web-design-small.jpg"
+          title="Web Design"
+          href="/web-design"
+        />
+        <BigLink
+          image="/assets/home/desktop/image-graphic-design.jpg"
+          title="Graphic Design"
+          href="/graphic-design"
+        />
+      </section>
+
+      <CtaBanner />
     </div>
   );
 };
