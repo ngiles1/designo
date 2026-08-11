@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import TriItem from "@/app/_components/tri-item";
 import BigLink from "./_components/big-link";
+import LinkButton from "./_components/link-button";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
           fuly responsive websites, app design and engaging brand experiences.
           Find out more about our services.
         </p>
-        <Link href="/">Learn more</Link>
+        <LinkButton href="/">Learn more</LinkButton>
       </section>
 
       <section className="grid grid-cols-2 gap-8 max-sm:px-2 mb-18">
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
           </div>
 
-          <Link href="/">Get in touch</Link>
+          <LinkButton href="/">Get in touch</LinkButton>
         </div>
       </section>
     </div>
