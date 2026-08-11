@@ -1,4 +1,5 @@
 import Image from "next/image";
+import clsx from "clsx";
 import TriItem from "@/app/_components/tri-item";
 import BigLink from "./_components/big-link";
 import LinkButton from "./_components/link-button";
@@ -7,7 +8,15 @@ export default function Home() {
   return (
     <div>
       <section className="text-white bg-peach sm:rounded-2xl p-16 mb-18">
-        <h1 className="font-medium text-[3rem] leading-[1] max-w-[33.75rem] mb-4">
+        <h1
+          className={clsx(
+            "font-medium",
+            "text-[3rem]",
+            "leading-[1]",
+            "max-w-[33.75rem]",
+            "mb-4",
+          )}
+        >
           Award-winning custom designs and digital branding solutions
         </h1>
         <p className="leading-[1.625] max-w-[28rem] mb-4">
@@ -18,7 +27,17 @@ export default function Home() {
         <LinkButton href="/">Learn more</LinkButton>
       </section>
 
-      <section className="flex flex-col gap-8 lg:grid lg:grid-cols-2 max-sm:px-2 mb-18">
+      <section
+        className={clsx(
+          "flex",
+          "flex-col",
+          "gap-8",
+          "lg:grid",
+          "lg:grid-cols-2",
+          "max-sm:px-2",
+          "mb-18",
+        )}
+      >
         <div className="lg:col-span-1">
           <BigLink
             image="/assets/home/desktop/image-web-design-large.jpg"
@@ -43,7 +62,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-8 lg:grid lg:grid-cols-3 max-sm:px-2 mb-12">
+      <section
+        className={clsx(
+          "flex",
+          "flex-col",
+          "gap-8",
+          "lg:grid",
+          "lg:grid-cols-3",
+          "max-sm:px-2",
+          "mb-12",
+        )}
+      >
         <div className="lg:col-span-1">
           <TriItem
             bgRot={0}
@@ -87,10 +116,28 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="max-sm:px-2">
-        <div className="text-white bg-peach flex items-center justify-between p-16 rounded-2xl">
+      <section className="max-sm:px-2 relative -mb-24">
+        <div
+          className={clsx(
+            "text-white",
+            "bg-peach",
+            "flex",
+            "items-center",
+            "justify-between",
+            "p-16",
+            "rounded-2xl",
+          )}
+        >
           <div>
-            <div className="font-medium text-[2.5rem] leading-[1] max-w-[16.75rem] mb-6">
+            <div
+              className={clsx(
+                "font-medium",
+                "text-[2.5rem]",
+                "leading-[1]",
+                "max-w-[16.75rem]",
+                "mb-6",
+              )}
+            >
               Let's talk about your project
             </div>
             <div className="max-w-[18.25rem]">

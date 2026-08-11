@@ -12,7 +12,20 @@ const socialLinks = [
 export default function AppFooter() {
   return (
     <footer className="bg-black text-white">
-      <div className="container mx-auto px-2 py-16 flex flex-col items-center gap-10 sm:gap-8">
+      <div
+        className={clsx(
+          "container",
+          "mx-auto",
+          "px-2",
+          "pt-36",
+          "pb-16",
+          "flex",
+          "flex-col",
+          "items-center",
+          "gap-10",
+          "sm:gap-8",
+        )}
+      >
         <div
           className={clsx(
             "flex",
@@ -79,7 +92,16 @@ export default function AppFooter() {
             "sm:text-left",
           )}
         >
-          <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
+          <div
+            className={clsx(
+              "flex",
+              "flex-col",
+              "items-center",
+              "gap-8",
+              "sm:flex-row",
+              "sm:items-start",
+            )}
+          >
             <div className="text-white/50 leading-[26px]">
               <span className="font-bold">Designo Central Office</span>
               <br />
