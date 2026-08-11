@@ -2,6 +2,7 @@ import clsx from "clsx";
 import FeatureBlock from "@/app/_components/feature-block";
 import TriItem from "@/app/_components/tri-item";
 import LinkButton from "@/app/_components/link-button";
+import CtaBanner from "@/app/_components/cta-banner";
 
 export default function About() {
   return (
@@ -162,6 +163,8 @@ export default function About() {
           to take action and drive real results.
         </p>
       </FeatureBlock>
+
+      <CtaBanner />
     </div>
   )
 };
