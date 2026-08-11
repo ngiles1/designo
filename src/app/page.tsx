@@ -18,33 +18,33 @@ export default function Home() {
         <LinkButton href="/">Learn more</LinkButton>
       </section>
 
-      <section className="grid grid-cols-2 gap-8 max-sm:px-2 mb-18">
-        <div className="col-span-1">
+      <section className="flex flex-col gap-8 lg:grid lg:grid-cols-2 max-sm:px-2 mb-18">
+        <div className="lg:col-span-1">
           <BigLink
             image="/assets/home/desktop/image-web-design-large.jpg"
-            title="Web Design" href="/"
+            title="Web Design" href="/web-design"
           />
         </div>
-        
-        <div className="col-span-1 flex flex-col gap-8">
+
+        <div className="flex flex-col gap-8 lg:col-span-1">
           <div>
             <BigLink
               image="/assets/home/desktop/image-app-design.jpg"
-              title="App Design" href="/"
+              title="App Design" href="/app-design"
             />
           </div>
 
           <div>
             <BigLink
               image="/assets/home/desktop/image-graphic-design.jpg"
-              title="Graphic Design" href="/"
+              title="Graphic Design" href="/graphic-design"
             />
           </div>
         </div>
       </section>
 
-      <section className="grid grid-cols-3 gap-8 max-sm:px-2 mb-12">
-        <div className="col-span-1">
+      <section className="flex flex-col gap-8 lg:grid lg:grid-cols-3 max-sm:px-2 mb-12">
+        <div className="lg:col-span-1">
           <TriItem
             bgRot={0}
             image="/assets/home/desktop/illustration-passionate.svg"
@@ -58,7 +58,7 @@ export default function Home() {
           </TriItem>
         </div>
 
-        <div className="col-span-1">
+        <div className="lg:col-span-1">
           <TriItem
             bgRot={270}
             image="/assets/home/desktop/illustration-resourceful.svg"
@@ -72,7 +72,7 @@ export default function Home() {
           </TriItem>
         </div>
 
-        <div className="col-span-1">
+        <div className="lg:col-span-1">
           <TriItem
             bgRot={90}
             image="/assets/home/desktop/illustration-friendly.svg"

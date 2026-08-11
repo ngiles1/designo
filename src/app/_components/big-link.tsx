@@ -10,8 +10,9 @@ type BigLinkProps = {
 export default function BigLink({ image, title, href }: BigLinkProps) {
   return (
     <Link
-      href="/"
+      href={href}
       className={clsx(
+        "group",
         "text-white",
         "text-center",
         "flex",
@@ -26,7 +27,18 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
     >
       <img
         src={image}
-        className="brightness-50 w-full h-full object-cover absolute -z-1"
+        alt=""
+        className="w-full h-full object-cover absolute -z-2"
+      />
+      <div
+        className={clsx(
+          "absolute",
+          "inset-0",
+          "-z-1",
+          "bg-black/50",
+          "transition-colors",
+          "group-hover:bg-peach/70",
+        )}
       />
       <div>
         <div
@@ -42,8 +54,20 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
           {title}
         </div>
 
-        <div className="uppercase font-medium text-[15px] tracking-[5px]">
+        <div
+          className={clsx(
+            "uppercase",
+            "font-medium",
+            "text-[15px]",
+            "tracking-[5px]",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-3",
+          )}
+        >
           View projects
+          <img src="/assets/shared/desktop/icon-right-arrow.svg" alt="" />
         </div>
       </div>
     </Link>
