@@ -1,11 +1,43 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 export default function AppHeader() {
+  const [mobMenuOpen, setMobMenuOpen] = useState<boolean>(false);
+  const toggleMobMenu = () => setMobMenuOpen(!mobMenuOpen);
+
   return (
-    <header className="flex items-center justify-between h-18">
-      <div>Designo</div>
+    <header className="flex items-center justify-between h-18 max-sm:px-2">
+      <Link href="/">
+        <img
+          src="/assets/shared/desktop/logo-dark.svg"
+          alt="Designo"
+          width="202"
+          height="27"
+          className="w-[196px]"
+        />
+      </Link>
       <div>
-        <nav>
+        <button
+          onClick={toggleMobMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobMenuOpen}
+          className="cursor-pointer sm:hidden relative z-10"
+        >
+          <img
+            src={
+              mobMenuOpen
+                ? "/assets/shared/mobile/icon-close.svg"
+                : "/assets/shared/mobile/icon-hamburger.svg"
+            }
+            alt=""
+            width="20"
+            height="20"
+          />
+        </button>
+
+        <nav className="max-sm:hidden">
           <ul className="
             text-dark-grey
             text-[14px]
@@ -14,9 +46,60 @@ export default function AppHeader() {
             flex
             gap-8
           ">
-            <li><Link href="/">Our company</Link></li>
-            <li><Link href="/">Locations</Link></li>
-            <li><Link href="/">Contact</Link></li>
+            <li className="hover:text-peach">
+              <Link href="/about">Our company</Link>
+            </li>
+            <li className="hover:text-peach">
+              <Link href="/locations">Locations</Link>
+            </li>
+            <li className="hover:text-peach">
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        className={`
+          fixed
+          inset-x-0
+          top-18
+          bottom-0
+          z-1
+          bg-black/50
+          transition-opacity
+          sm:hidden
+          ${mobMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+        `}
+        onClick={toggleMobMenu}
+      >
+        <nav
+          className={`
+            bg-black
+            px-6
+            py-12
+            transition-transform
+            ${mobMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+          `}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <ul className="
+            text-white
+            text-2xl
+            uppercase
+            tracking-[2px]
+            flex
+            flex-col
+            gap-8
+          ">
+            <li className="hover:text-peach">
+              <Link href="/about" onClick={toggleMobMenu}>Our company</Link>
+            </li>
+            <li className="hover:text-peach">
+              <Link href="/locations" onClick={toggleMobMenu}>Locations</Link>
+            </li>
+            <li className="hover:text-peach">
+              <Link href="/contact" onClick={toggleMobMenu}>Contact</Link>
+            </li>
           </ul>
         </nav>
       </div>

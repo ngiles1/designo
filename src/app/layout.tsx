@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased">
       <body className="flex flex-col justify-between min-h-screen">
-        <div className="container mx-auto">
+        <div className="container sm:px-2 mx-auto">
           <AppHeader />
           <main>
             {children}

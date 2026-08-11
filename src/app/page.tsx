@@ -18,7 +18,7 @@ export default function Home() {
         <Link href="/">Learn more</Link>
       </section>
 
-      <section className="grid grid-cols-2 gap-8 mb-18">
+      <section className="grid grid-cols-2 gap-8 max-sm:px-2 mb-18">
         <div className="col-span-1">
           <BigLink
             image="/assets/home/desktop/image-web-design-large.jpg"
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid grid-cols-3 gap-8 mb-12">
+      <section className="grid grid-cols-3 gap-8 max-sm:px-2 mb-12">
         <div className="col-span-1">
           <TriItem
             bgRot={0}
@@ -86,20 +86,22 @@ export default function Home() {
           </TriItem>
         </div>
       </section>
+      
+      <section className="max-sm:px-2">
+        <div className="text-white bg-peach flex items-center justify-between p-16 rounded-2xl">
+          <div>
+            <div className="font-medium text-[2.5rem] leading-[1] max-w-[16.75rem] mb-6">
+              Let's talk about your project
+            </div>
+            <div className="max-w-[18.25rem]">
+              Ready to take it to the next level? Contact us today and find out
+              how our expertise can help your business grow.
+            </div>
+          </div>
 
-      <div className="text-white bg-peach flex items-center justify-between p-16 sm:rounded-2xl">
-        <div>
-          <div className="font-medium text-[2.5rem] leading-[1] max-w-[16.75rem] mb-6">
-            Let's talk about your project
-          </div>
-          <div className="max-w-[18.25rem]">
-            Ready to take it to the next level? Contact us today and find out
-            how our expertise can help your business grow.
-          </div>
+          <Link href="/">Get in touch</Link>
         </div>
-
-        <Link href="/">Get in touch</Link>
-      </div>
+      </section>
     </div>
   );
 }
