@@ -76,6 +76,7 @@ export default function AppHeader() {
         onClick={toggleMobMenu}
       >
         <nav
+          data-testid="mobile-nav"
           className={clsx(
             "bg-black",
             "px-6",
