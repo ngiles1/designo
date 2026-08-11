@@ -7,24 +7,76 @@ import LinkButton from "./_components/link-button";
 export default function Home() {
   return (
     <div>
-      <section className="text-white bg-peach sm:rounded-2xl p-16 mb-18">
-        <h1
+      <section className={clsx(
+        "text-white",
+        "bg-peach",
+        "flex",
+        "flex-col",
+        "lg:flex-row",
+        "justify-center",
+        "lg:justify-start",
+        "items-center",
+        "lg:h-156",
+        "p-16",
+        "mb-18",
+        "sm:rounded-2xl",
+        "overflow-hidden",
+        "relative"
+      )}>
+        <div className="text-center lg:text-left z-1">
+          <h1
+            className={clsx(
+              "font-medium",
+              "text-[3rem]",
+              "leading-[1]",
+              "max-w-[33.75rem]",
+              "mb-4",
+            )}
+          >
+            Award-winning custom designs and digital branding solutions
+          </h1>
+          <p className="leading-[1.625] max-w-[28rem] max-lg:mx-auto mb-4">
+            With over 10 years in the industry, we are experienced in creating
+            fully responsive websites, app design and engaging brand
+            experiences. Find out more about our services.
+          </p>
+          <LinkButton href="/">Learn more</LinkButton>
+        </div>
+        <img
+          src="/assets/home/desktop/bg-pattern-hero-home.svg"
+          width="496"
+          height="495"
+          alt=""
           className={clsx(
-            "font-medium",
-            "text-[3rem]",
-            "leading-[1]",
-            "max-w-[33.75rem]",
-            "mb-4",
+            "absolute",
+            "-right-42",
+            "sm:-right-12",
+            "lg:w-192",
+            "lg:right-0",
+            "lg:top-12"
           )}
-        >
-          Award-winning custom designs and digital branding solutions
-        </h1>
-        <p className="leading-[1.625] max-w-[28rem] mb-4">
-          With over 10 years in the industry, we are experienced in creating
-          fuly responsive websites, app design and engaging brand experiences.
-          Find out more about our services.
-        </p>
-        <LinkButton href="/">Learn more</LinkButton>
+        />
+        <img
+          src="/assets/home/desktop/image-hero-phone.png"
+          width="624"
+          height="913"
+          alt="Phone"
+          className={clsx(
+            "w-[360px]",
+            "sm:w-[720px]",
+            "min-w-[360px]",
+            "lg:absolute",
+            "lg:bottom-0",
+            "lg:left-1/2",
+            "lg:-translate-x-24",
+            "lg:top-0",
+            "lg:right-0",
+            "-mt-12",
+            "-mb-64",
+            "sm:-mb-92",
+            "pointer-events-none"
+          )}
+        />
       </section>
 
       <section
