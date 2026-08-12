@@ -42,6 +42,37 @@
   line-height: 1.625;
 }
 
+::view-transition-old(.fade-out) {
+  animation: 150ms ease-out both page-fade-out;
+}
+::view-transition-new(.fade-in) {
+  animation: 150ms ease-in 150ms both page-fade-in;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
