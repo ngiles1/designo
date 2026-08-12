@@ -29,7 +29,7 @@ export default function FeatureBlock({
         "overflow-hidden",
       )}
     >
-      <picture>
+      <picture className="contents">
         <source
           media="(min-width: 1024px)"
           srcSet={assetPath(`/assets/${section}/desktop/${imageName}`)}

@@ -18,7 +18,7 @@ export default function About() {
           "overflow-hidden",
         )}
       >
-        <picture>
+        <picture className="contents">
           <source
             media="(min-width: 1024px)"
             srcSet={assetPath("/assets/about/desktop/image-about-hero.jpg")}
@@ -52,7 +52,7 @@ export default function About() {
             "overflow-hidden",
           )}
         >
-          <picture>
+          <picture className="contents">
             <source
               media="(min-width: 1024px)"
               srcSet={assetPath("/assets/about/desktop/bg-pattern-hero-about-desktop.svg")}

@@ -33,7 +33,7 @@ export default function LocationCard({
         reverse ? "lg:flex-row-reverse" : "lg:flex-row",
       )}
     >
-      <picture>
+      <picture className="contents">
         <source
           media="(min-width: 1024px)"
           srcSet={assetPath(`/assets/locations/desktop/${desktopMap}`)}

@@ -33,7 +33,7 @@ export default function Contact() {
           "mb-18",
         )}
       >
-        <picture>
+        <picture className="contents">
           <source
             media="(min-width: 640px)"
             srcSet={assetPath("/assets/contact/desktop/bg-pattern-hero-desktop.svg")}
