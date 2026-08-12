@@ -33,16 +33,17 @@ export default function Contact() {
           "mb-18",
         )}
       >
-        <img
-          src={assetPath("/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg")}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover sm:hidden"
-        />
-        <img
-          src={assetPath("/assets/contact/desktop/bg-pattern-hero-desktop.svg")}
-          alt=""
-          className="hidden sm:block absolute inset-0 w-full h-full object-cover"
-        />
+        <picture>
+          <source
+            media="(min-width: 640px)"
+            srcSet={assetPath("/assets/contact/desktop/bg-pattern-hero-desktop.svg")}
+          />
+          <img
+            src={assetPath("/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg")}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </picture>
 
         <div
           className={clsx(

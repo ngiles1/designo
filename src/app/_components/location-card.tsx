@@ -32,16 +32,17 @@ export default function LocationCard({
         reverse ? "lg:flex-row-reverse" : "lg:flex-row",
       )}
     >
-      <img
-        src={assetPath(`/assets/locations/tablet/${tabletMap}`)}
-        alt=""
-        className="w-full h-80 object-cover sm:rounded-2xl lg:hidden"
-      />
-      <img
-        src={assetPath(`/assets/locations/desktop/${desktopMap}`)}
-        alt=""
-        className="hidden lg:block lg:w-[350px] lg:h-[326px] lg:max-w-[350px] lg:max-h-[326px] object-cover rounded-2xl"
-      />
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcSet={assetPath(`/assets/locations/desktop/${desktopMap}`)}
+        />
+        <img
+          src={assetPath(`/assets/locations/tablet/${tabletMap}`)}
+          alt=""
+          className="w-full h-80 object-cover sm:rounded-2xl lg:w-[350px] lg:h-[326px] lg:max-w-[350px] lg:max-h-[326px]"
+        />
+      </picture>
 
       <div
         className={clsx(

@@ -18,21 +18,21 @@ export default function About() {
           "overflow-hidden",
         )}
       >
-        <img
-          src={assetPath("/assets/about/mobile/image-about-hero.jpg")}
-          alt=""
-          className="w-full h-80 object-cover sm:hidden"
-        />
-        <img
-          src={assetPath("/assets/about/tablet/image-about-hero.jpg")}
-          alt=""
-          className="hidden w-full h-80 object-cover sm:block lg:hidden"
-        />
-        <img
-          src={assetPath("/assets/about/desktop/image-about-hero.jpg")}
-          alt=""
-          className="hidden lg:block lg:w-1/2 h-auto object-cover"
-        />
+        <picture>
+          <source
+            media="(min-width: 1024px)"
+            srcSet={assetPath("/assets/about/desktop/image-about-hero.jpg")}
+          />
+          <source
+            media="(min-width: 640px)"
+            srcSet={assetPath("/assets/about/tablet/image-about-hero.jpg")}
+          />
+          <img
+            src={assetPath("/assets/about/mobile/image-about-hero.jpg")}
+            alt=""
+            className="w-full h-80 object-cover lg:w-1/2 lg:h-auto"
+          />
+        </picture>
 
         <div
           className={clsx(
@@ -52,16 +52,17 @@ export default function About() {
             "overflow-hidden",
           )}
         >
-          <img
-            src={assetPath("/assets/about/mobile/bg-pattern-hero-about-mobile.svg")}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover lg:hidden"
-          />
-          <img
-            src={assetPath("/assets/about/desktop/bg-pattern-hero-about-desktop.svg")}
-            alt=""
-            className="hidden lg:block absolute inset-0 w-full h-full object-cover"
-          />
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet={assetPath("/assets/about/desktop/bg-pattern-hero-about-desktop.svg")}
+            />
+            <img
+              src={assetPath("/assets/about/mobile/bg-pattern-hero-about-mobile.svg")}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </picture>
           <div className="z-1">
             <h1
               className={clsx(

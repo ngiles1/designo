@@ -28,21 +28,21 @@ export default function FeatureBlock({
         "overflow-hidden",
       )}
     >
-      <img
-        src={assetPath(`/assets/${section}/mobile/${imageName}`)}
-        alt=""
-        className="w-full h-80 object-cover sm:hidden"
-      />
-      <img
-        src={assetPath(`/assets/${section}/tablet/${imageName}`)}
-        alt=""
-        className="hidden w-full h-80 object-cover sm:block lg:hidden"
-      />
-      <img
-        src={assetPath(`/assets/${section}/desktop/${imageName}`)}
-        alt=""
-        className="hidden lg:block lg:w-1/2 h-auto object-cover"
-      />
+      <picture>
+        <source
+          media="(min-width: 1024px)"
+          srcSet={assetPath(`/assets/${section}/desktop/${imageName}`)}
+        />
+        <source
+          media="(min-width: 640px)"
+          srcSet={assetPath(`/assets/${section}/tablet/${imageName}`)}
+        />
+        <img
+          src={assetPath(`/assets/${section}/mobile/${imageName}`)}
+          alt=""
+          className="w-full h-80 object-cover lg:w-1/2 lg:h-auto"
+        />
+      </picture>
 
       <div
         className={clsx(
