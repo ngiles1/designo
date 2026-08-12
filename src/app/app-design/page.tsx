@@ -43,7 +43,9 @@ export default function AppDesign() {
           "flex-col",
           "items-center",
           "justify-center",
-          "p-16",
+          "px-4",
+          "py-16",
+          "sm:p-16",
           "mb-18",
           "sm:rounded-2xl",
           "overflow-hidden",
@@ -65,8 +67,10 @@ export default function AppDesign() {
           <h1
             className={clsx(
               "font-medium",
-              "text-[2.5rem]",
-              "leading-[1]",
+              "text-[2rem]",
+              "leading-[1.125]",
+              "sm:text-[2.5rem]",
+              "sm:leading-[1]",
               "mb-6",
             )}
           >

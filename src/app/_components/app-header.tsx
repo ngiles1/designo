@@ -9,7 +9,7 @@ export default function AppHeader() {
   const toggleMobMenu = () => setMobMenuOpen(!mobMenuOpen);
 
   return (
-    <header className="flex items-center justify-between h-18 max-sm:px-2">
+    <header className="flex items-center justify-between h-18 max-sm:px-2 sm:py-12">
       <Link href="/">
         <img
           src="/assets/shared/desktop/logo-dark.svg"

@@ -28,5 +28,3 @@ There is no test suite configured in this repo (no Jest/Vitest/Playwright, no `t
 **Fonts**: self-hosted via raw `@font-face` rules in `globals.css` (Jost, regular/500 weights, woff2 files in `public/assets/fonts/`) — not `next/font`. Don't assume `next/font` is in use when working on typography.
 
 **Assets** (`public/assets/`): organized by section, then by breakpoint — `public/assets/<section>/{mobile,tablet,desktop}/`, where `<section>` mirrors a route name (`home`, `about`, `contact`, `locations`, `web-design`, `app-design`, `graphic-design`) plus a `shared/` folder for cross-page assets (logo, social icons, background patterns). Breakpoint coverage is uneven — sections still in stub form (e.g. `web-design`, `app-design`, `graphic-design`) currently only have `desktop/` assets.
-
-**Figma reference** (`docs/figma/`, gitignored): the Figma seat behind this project has a very restrictive REST API rate limit, so fetched design data is cached locally in `docs/figma/` instead of being re-fetched every session — it's not committed. Check `docs/figma/README.md` and `docs/figma/file-map.md` before calling a Figma MCP tool — the node you need may already be cached.

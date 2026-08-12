@@ -18,7 +18,9 @@ export default function Home() {
         "lg:justify-start",
         "items-center",
         "lg:h-156",
-        "p-16",
+        "px-4",
+        "py-16",
+        "sm:p-16",
         "mb-18",
         "sm:rounded-2xl",
         "overflow-hidden",
@@ -28,8 +30,10 @@ export default function Home() {
           <h1
             className={clsx(
               "font-medium",
-              "text-[3rem]",
-              "leading-[1]",
+              "text-[2rem]",
+              "leading-[1.125]",
+              "sm:text-[3rem]",
+              "sm:leading-[1]",
               "max-w-[33.75rem]",
               "mb-4",
             )}

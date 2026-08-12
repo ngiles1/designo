@@ -44,7 +44,9 @@ export default function About() {
             "justify-center",
             "lg:justify-start",
             "lg:w-1/2",
-            "p-16",
+            "px-4",
+            "py-16",
+            "sm:p-16",
             "relative",
             "overflow-hidden",
           )}
@@ -63,8 +65,10 @@ export default function About() {
             <h1
               className={clsx(
                 "font-medium",
-                "text-[2.5rem]",
-                "leading-[1]",
+                "text-[2rem]",
+                "leading-[1.125]",
+                "sm:text-[2.5rem]",
+                "sm:leading-[1]",
                 "mb-6",
               )}
             >
