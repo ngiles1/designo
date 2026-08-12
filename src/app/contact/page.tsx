@@ -124,6 +124,7 @@ export default function Contact() {
                   "transition-colors",
                   "hover:bg-light-peach",
                   "hover:text-white",
+                  "cursor-pointer"
                 )}
               >
                 Submit
