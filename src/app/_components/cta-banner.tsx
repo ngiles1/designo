@@ -17,7 +17,9 @@ export default function CtaBanner() {
           "lg:items-center",
           "lg:justify-between",
           "gap-8",
-          "p-16",
+          "px-4",
+          "py-16",
+          "sm:p-16",
           "rounded-2xl",
           "relative",
           "overflow-hidden",
@@ -32,7 +34,8 @@ export default function CtaBanner() {
           <div
             className={clsx(
               "font-medium",
-              "text-[2.5rem]",
+              "text-[2rem]",
+              "sm:text-[2.5rem]",
               "leading-[1]",
               "max-w-[16.75rem]",
               "mx-auto",
