@@ -69,7 +69,7 @@ export default function AppHeader() {
           "inset-x-0",
           "top-18",
           "bottom-0",
-          "z-1",
+          "z-20",
           "bg-black/50",
           "transition-opacity",
           "sm:hidden",
