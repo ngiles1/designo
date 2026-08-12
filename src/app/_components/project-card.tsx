@@ -1,3 +1,4 @@
+import Image from "next/image";
 import clsx from "clsx";
 
 type ProjectCardProps = {
@@ -9,7 +10,13 @@ type ProjectCardProps = {
 export default function ProjectCard({ image, title, description }: ProjectCardProps) {
   return (
     <div className="rounded-2xl overflow-hidden">
-      <img src={image} alt="" className="w-full h-auto" />
+      <Image
+        src={image}
+        alt=""
+        width={700}
+        height={640}
+        className="w-full h-auto"
+      />
       <div className="text-center bg-pale-peach h-full px-8 py-10">
         <div
           className={clsx(
