@@ -1,3 +1,4 @@
+import Image from "next/image";
 import clsx from "clsx";
 import ProjectCard from "@/app/_components/project-card";
 import BigLink from "@/app/_components/big-link";
@@ -43,16 +44,11 @@ export default function GraphicDesign() {
           "relative",
         )}
       >
-        <img
+        <Image
           src={assetPath("/assets/graphic-design/desktop/bg-pattern-intro-graphic.svg")}
           alt=""
-          className={clsx(
-            "absolute",
-            "inset-0",
-            "w-full",
-            "h-full",
-            "object-cover",
-          )}
+          fill
+          className="object-cover"
         />
         <div className="z-1">
           <h1

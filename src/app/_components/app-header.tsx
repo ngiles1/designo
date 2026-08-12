@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import clsx from "clsx";
 import { assetPath } from "@/lib/asset-path";
 
@@ -12,11 +13,11 @@ export default function AppHeader() {
   return (
     <header className="flex items-center justify-between h-18 max-sm:px-2 sm:py-12">
       <Link href="/">
-        <img
+        <Image
           src={assetPath("/assets/shared/desktop/logo-dark.svg")}
           alt="Designo"
-          width="202"
-          height="27"
+          width={202}
+          height={27}
           className="w-[196px]"
         />
       </Link>
@@ -27,15 +28,15 @@ export default function AppHeader() {
           aria-expanded={mobMenuOpen}
           className="cursor-pointer sm:hidden relative z-10"
         >
-          <img
+          <Image
             src={assetPath(
               mobMenuOpen
                 ? "/assets/shared/mobile/icon-close.svg"
                 : "/assets/shared/mobile/icon-hamburger.svg"
             )}
             alt=""
-            width="20"
-            height="20"
+            width={20}
+            height={20}
           />
         </button>
 

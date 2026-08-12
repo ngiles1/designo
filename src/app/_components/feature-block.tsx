@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import clsx from "clsx";
 import { assetPath } from "@/lib/asset-path";
 
@@ -55,9 +56,11 @@ export default function FeatureBlock({
           "overflow-hidden",
         )}
       >
-        <img
+        <Image
           src={assetPath("/assets/shared/desktop/bg-pattern-two-circles.svg")}
           alt=""
+          width={584}
+          height={292}
           className={clsx("absolute", "bottom-0", reverse ? "left-0" : "right-0")}
         />
         <div className="z-1">

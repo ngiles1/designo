@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import clsx from "clsx";
 import { assetPath } from "@/lib/asset-path";
 
@@ -40,11 +41,11 @@ export default function AppFooter() {
           )}
         >
           <Link href="/" className="order-1">
-            <img
+            <Image
               src={assetPath("/assets/shared/desktop/logo-light.svg")}
               alt="Designo"
-              width="196"
-              height="24"
+              width={196}
+              height={24}
               className="w-[172px] sm:w-[196px]"
             />
           </Link>
@@ -124,7 +125,7 @@ export default function AppFooter() {
             {socialLinks.map(({ name, icon }) => (
               <li key={name}>
                 <a href="/" aria-label={name} className="hover:opacity-70">
-                  <img src={assetPath(icon)} alt="" width="24" height="24" />
+                  <Image src={assetPath(icon)} alt="" width={24} height={24} />
                 </a>
               </li>
             ))}

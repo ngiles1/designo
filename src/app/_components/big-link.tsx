@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import clsx from "clsx";
 import { assetPath } from "@/lib/asset-path";
 
@@ -26,10 +27,11 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
         "overflow-hidden",
       )}
     >
-      <img
+      <Image
         src={image}
         alt=""
-        className="w-full h-full object-cover absolute -z-2 transition-transform group-hover:scale-[1.02]"
+        fill
+        className="object-cover -z-2 transition-transform group-hover:scale-[1.02]"
       />
       <div
         className={clsx(
@@ -68,9 +70,11 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
           )}
         >
           View projects
-          <img
+          <Image
             src={assetPath("/assets/shared/desktop/icon-right-arrow.svg")}
             alt=""
+            width={7}
+            height={10}
             className="transition-transform group-hover:translate-x-[3px]"
           />
         </div>

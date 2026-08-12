@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import clsx from "clsx";
 import { assetPath } from "@/lib/asset-path";
 
@@ -14,12 +15,14 @@ export default function TriItem({ bgRot = 0, image, title, children }: TriItemPr
     <div className="text-center">
       <div className="flex justify-center mb-8">
         <div className="relative">
-          <img
+          <Image
             src={assetPath("/assets/shared/desktop/bg-pattern-small-circle.svg")}
             alt=""
+            width={202}
+            height={202}
             style={{ transform: `rotate(${bgRot}deg)` }}
           />
-          <img src={image} className="absolute top-0"/>
+          <Image src={image} alt="" width={202} height={202} className="absolute top-0" />
         </div>
       </div>
       {title && (

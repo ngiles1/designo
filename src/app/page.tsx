@@ -48,10 +48,10 @@ export default function Home() {
           </p>
           <LinkButton href="/about">Learn more</LinkButton>
         </div>
-        <img
+        <Image
           src={assetPath("/assets/home/desktop/bg-pattern-hero-home.svg")}
-          width="496"
-          height="495"
+          width={496}
+          height={495}
           alt=""
           className={clsx(
             "absolute",
@@ -62,11 +62,12 @@ export default function Home() {
             "lg:top-12"
           )}
         />
-        <img
+        <Image
           src={assetPath("/assets/home/desktop/image-hero-phone.png")}
-          width="624"
-          height="913"
+          width={624}
+          height={913}
           alt="Phone"
+          priority
           className={clsx(
             "w-[360px]",
             "sm:w-[720px]",
