@@ -28,7 +28,7 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
       <img
         src={image}
         alt=""
-        className="w-full h-full object-cover absolute -z-2"
+        className="w-full h-full object-cover absolute -z-2 transition-transform group-hover:scale-[1.02]"
       />
       <div
         className={clsx(
@@ -67,7 +67,11 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
           )}
         >
           View projects
-          <img src="/assets/shared/desktop/icon-right-arrow.svg" alt="" />
+          <img
+            src="/assets/shared/desktop/icon-right-arrow.svg"
+            alt=""
+            className="transition-transform group-hover:translate-x-[3px]"
+          />
         </div>
       </div>
     </Link>
