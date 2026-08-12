@@ -1,23 +1,81 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
 import clsx from "clsx";
 import TriItem from "@/app/_components/tri-item";
 import LinkButton from "@/app/_components/link-button";
 import { assetPath } from "@/lib/asset-path";
 
-const fieldClasses = clsx(
+const fieldBaseClasses = clsx(
   "w-full",
   "bg-transparent",
   "border-b",
-  "border-white/40",
   "placeholder-white",
   "placeholder:opacity-70",
   "text-white",
   "py-3",
   "focus:outline-none",
-  "focus:border-white",
   "transition-colors",
 );
 
+type FormValues = {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
+type FormErrors = Partial<Record<keyof FormValues, string>>;
+
+const initialValues: FormValues = { name: "", email: "", phone: "", message: "" };
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validate(values: FormValues): FormErrors {
+  const errors: FormErrors = {};
+
+  if (!values.name.trim()) {
+    errors.name = "Name is required";
+  }
+
+  if (!values.email.trim()) {
+    errors.email = "Email is required";
+  } else if (!emailPattern.test(values.email.trim())) {
+    errors.email = "Please enter a valid email address";
+  }
+
+  if (!values.message.trim()) {
+    errors.message = "Message is required";
+  }
+
+  return errors;
+}
+
 export default function Contact() {
+  const [values, setValues] = useState<FormValues>(initialValues);
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const handleChange = (field: keyof FormValues) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setValues((prev) => ({ ...prev, [field]: e.target.value }));
+      setErrors((prev) => ({ ...prev, [field]: undefined }));
+    };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const nextErrors = validate(values);
+    setErrors(nextErrors);
+
+    if (Object.keys(nextErrors).length === 0) {
+      alert("Form sent!");
+      setValues(initialValues);
+    }
+  };
+
+  const fieldClasses = (field: keyof FormValues) =>
+    clsx(fieldBaseClasses, errors[field] ? "border-red-300" : "border-white/40 focus:border-white");
+
   return (
     <div>
       <section
@@ -79,35 +137,80 @@ export default function Contact() {
             </p>
           </div>
 
-          <form className="lg:w-1/2 flex flex-col gap-6 text-left">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              aria-label="Name"
-              className={fieldClasses}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              aria-label="Email Address"
-              className={fieldClasses}
-            />
+          <form
+            className="lg:w-1/2 flex flex-col gap-6 text-left"
+            noValidate
+            onSubmit={handleSubmit}
+          >
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                aria-label="Name"
+                required
+                value={values.name}
+                onChange={handleChange("name")}
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? "name-error" : undefined}
+                className={fieldClasses("name")}
+              />
+              {errors.name && (
+                <p id="name-error" className="mt-2 text-sm font-medium text-white">
+                  {errors.name}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                aria-label="Email Address"
+                required
+                value={values.email}
+                onChange={handleChange("email")}
+                aria-invalid={!!errors.email}
+                aria-describedby={errors.email ? "email-error" : undefined}
+                className={fieldClasses("email")}
+              />
+              {errors.email && (
+                <p id="email-error" className="mt-2 text-sm font-medium text-white">
+                  {errors.email}
+                </p>
+              )}
+            </div>
+
             <input
               type="tel"
               name="phone"
               placeholder="Phone"
               aria-label="Phone"
-              className={fieldClasses}
+              value={values.phone}
+              onChange={handleChange("phone")}
+              className={fieldClasses("phone")}
             />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              aria-label="Your Message"
-              rows={1}
-              className={clsx(fieldClasses, "resize-none")}
-            />
+
+            <div>
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                aria-label="Your Message"
+                rows={1}
+                required
+                value={values.message}
+                onChange={handleChange("message")}
+                aria-invalid={!!errors.message}
+                aria-describedby={errors.message ? "message-error" : undefined}
+                className={clsx(fieldClasses("message"), "resize-none")}
+              />
+              {errors.message && (
+                <p id="message-error" className="mt-2 text-sm font-medium text-white">
+                  {errors.message}
+                </p>
+              )}
+            </div>
 
             <div className="flex justify-center sm:justify-end mt-2">
               <button
