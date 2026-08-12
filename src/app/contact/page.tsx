@@ -117,7 +117,7 @@ export default function Contact() {
                   "px-8",
                   "py-4",
                   "uppercase",
-                  "text-[15px]",
+                  "text-[.9375rem]",
                   "tracking-[1px]",
                   "font-medium",
                   "bg-white",

@@ -59,7 +59,7 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
           className={clsx(
             "uppercase",
             "font-medium",
-            "text-[15px]",
+            "text-[.9375rem]",
             "tracking-[5px]",
             "flex",
             "items-center",

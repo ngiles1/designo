@@ -18,7 +18,7 @@ export default function LinkButton({ href, variant = "light", children }: LinkBu
         "px-8",
         "py-4",
         "uppercase",
-        "text-[15px]",
+        "text-[.9375rem]",
         "tracking-[1px]",
         "font-medium",
         "transition-colors",

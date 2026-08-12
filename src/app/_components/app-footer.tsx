@@ -58,7 +58,7 @@ export default function AppFooter() {
                 "flex-col",
                 "items-center",
                 "gap-8",
-                "text-[14px]",
+                "text-[.875rem]",
                 "uppercase",
                 "tracking-[2px]",
                 "sm:flex-row",

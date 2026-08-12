@@ -43,7 +43,7 @@ export default function AppHeader() {
           <ul
             className={clsx(
               "text-dark-grey",
-              "text-[14px]",
+              "text-[.875rem]",
               "uppercase",
               "tracking-[2px]",
               "flex",
