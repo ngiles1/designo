@@ -45,7 +45,7 @@ export default function Home() {
             fully responsive websites, app design and engaging brand
             experiences. Find out more about our services.
           </p>
-          <LinkButton href="/">Learn more</LinkButton>
+          <LinkButton href="/about">Learn more</LinkButton>
         </div>
         <img
           src="/assets/home/desktop/bg-pattern-hero-home.svg"

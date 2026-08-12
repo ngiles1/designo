@@ -48,7 +48,7 @@ export default function CtaBanner() {
           </div>
         </div>
 
-        <LinkButton href="/">Get in touch</LinkButton>
+        <LinkButton href="/contact">Get in touch</LinkButton>
       </div>
     </section>
   );
