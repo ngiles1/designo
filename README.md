@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend Mentor - Designo agency website solution
 
-## Getting Started
+This is a solution to the [Designo agency website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### The challenge
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Users should be able to:
 
-## Learn More
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- Receive an error message when the contact form is submitted if:
+  - The `Name`, `Email Address` or `Your Message` fields are empty should show "Can't be empty"
+  - The `Email Address` is not formatted correctly should show "Please use a valid email address"
+- **Bonus**: View actual locations on the locations page maps (we recommend [Leaflet JS](https://leafletjs.com/) for this)
 
-To learn more about Next.js, take a look at the following resources:
+### Links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Solution URL: _not yet submitted_
+- Live Site URL: _not yet deployed_
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## My process
 
-## Deploy on Vercel
+### Built with
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Semantic HTML5 markup
+- Mobile-first workflow
+- [Next.js](https://nextjs.org/) (App Router) - React framework, built as a static export (`output: 'export'`), no server runtime
+- [React](https://reactjs.org/) - JS library
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/) - CSS-first `@theme` config for design tokens (no `tailwind.config.js`)
+- Self-hosted fonts via raw `@font-face` (Jost)
+- [Playwright](https://playwright.dev/) - end-to-end navigation tests
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### What I learned
+
+Every route (`/`, `/about`, `/contact`, `/locations`, `/web-design`, `/app-design`, `/graphic-design`) shares a small set of reusable pieces under `src/app/_components/` — `big-link`, `tri-item`, `cta-banner`, `feature-block`, `link-button`, `location-card`, `project-card` — rather than each page rolling its own markup. Keeping these generic early on made it straightforward to build out later pages (About, Contact, Locations, the three service pages) by composing existing components instead of duplicating layout code.
+
+A page-transition wrapper (`page-transition.tsx`) adds a fade-to-white effect on navigation between routes, layered on top of Next's App Router without needing a custom server.
+
+### Continued development
+
+- Wire up the Leaflet JS map on the Locations page (bonus feature)
+- Add client-side validation to the Contact form (empty-field and email-format errors)
+- Fill in remaining responsive assets for sections that currently only have desktop imagery
+
+## Author
+
+- N Giles
