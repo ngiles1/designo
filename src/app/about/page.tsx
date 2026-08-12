@@ -3,6 +3,7 @@ import FeatureBlock from "@/app/_components/feature-block";
 import TriItem from "@/app/_components/tri-item";
 import LinkButton from "@/app/_components/link-button";
 import CtaBanner from "@/app/_components/cta-banner";
+import { assetPath } from "@/lib/asset-path";
 
 export default function About() {
   return (
@@ -18,17 +19,17 @@ export default function About() {
         )}
       >
         <img
-          src="/assets/about/mobile/image-about-hero.jpg"
+          src={assetPath("/assets/about/mobile/image-about-hero.jpg")}
           alt=""
           className="w-full h-80 object-cover sm:hidden"
         />
         <img
-          src="/assets/about/tablet/image-about-hero.jpg"
+          src={assetPath("/assets/about/tablet/image-about-hero.jpg")}
           alt=""
           className="hidden w-full h-80 object-cover sm:block lg:hidden"
         />
         <img
-          src="/assets/about/desktop/image-about-hero.jpg"
+          src={assetPath("/assets/about/desktop/image-about-hero.jpg")}
           alt=""
           className="hidden lg:block lg:w-1/2 h-auto object-cover"
         />
@@ -52,12 +53,12 @@ export default function About() {
           )}
         >
           <img
-            src="/assets/about/mobile/bg-pattern-hero-about-mobile.svg"
+            src={assetPath("/assets/about/mobile/bg-pattern-hero-about-mobile.svg")}
             alt=""
             className="absolute inset-0 w-full h-full object-cover lg:hidden"
           />
           <img
-            src="/assets/about/desktop/bg-pattern-hero-about-desktop.svg"
+            src={assetPath("/assets/about/desktop/bg-pattern-hero-about-desktop.svg")}
             alt=""
             className="hidden lg:block absolute inset-0 w-full h-full object-cover"
           />
@@ -119,7 +120,7 @@ export default function About() {
       >
         <TriItem
           bgRot={0}
-          image="/assets/shared/desktop/illustration-canada.svg"
+          image={assetPath("/assets/shared/desktop/illustration-canada.svg")}
           title="Canada"
         >
           <LinkButton href="/locations" variant="peach">
@@ -129,7 +130,7 @@ export default function About() {
 
         <TriItem
           bgRot={270}
-          image="/assets/shared/desktop/illustration-australia.svg"
+          image={assetPath("/assets/shared/desktop/illustration-australia.svg")}
           title="Australia"
         >
           <LinkButton href="/locations" variant="peach">
@@ -139,7 +140,7 @@ export default function About() {
 
         <TriItem
           bgRot={90}
-          image="/assets/shared/desktop/illustration-united-kingdom.svg"
+          image={assetPath("/assets/shared/desktop/illustration-united-kingdom.svg")}
           title="United Kingdom"
         >
           <LinkButton href="/locations" variant="peach">

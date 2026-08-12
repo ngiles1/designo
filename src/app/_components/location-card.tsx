@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { assetPath } from "@/lib/asset-path";
 
 type LocationCardProps = {
   reverse?: boolean;
@@ -32,12 +33,12 @@ export default function LocationCard({
       )}
     >
       <img
-        src={`/assets/locations/tablet/${tabletMap}`}
+        src={assetPath(`/assets/locations/tablet/${tabletMap}`)}
         alt=""
         className="w-full h-80 object-cover sm:rounded-2xl lg:hidden"
       />
       <img
-        src={`/assets/locations/desktop/${desktopMap}`}
+        src={assetPath(`/assets/locations/desktop/${desktopMap}`)}
         alt=""
         className="hidden lg:block lg:w-[350px] lg:h-[326px] lg:max-w-[350px] lg:max-h-[326px] object-cover rounded-2xl"
       />
@@ -56,7 +57,7 @@ export default function LocationCard({
         )}
       >
         <img
-          src="/assets/shared/desktop/bg-pattern-two-circles.svg"
+          src={assetPath("/assets/shared/desktop/bg-pattern-two-circles.svg")}
           alt=""
           className={clsx("absolute", "bottom-0", reverse ? "left-0" : "right-0")}
         />

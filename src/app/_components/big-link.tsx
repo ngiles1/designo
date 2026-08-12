@@ -1,5 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
+import { assetPath } from "@/lib/asset-path";
 
 type BigLinkProps = {
   image: string;
@@ -68,7 +69,7 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
         >
           View projects
           <img
-            src="/assets/shared/desktop/icon-right-arrow.svg"
+            src={assetPath("/assets/shared/desktop/icon-right-arrow.svg")}
             alt=""
             className="transition-transform group-hover:translate-x-[3px]"
           />

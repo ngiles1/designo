@@ -4,6 +4,7 @@ import TriItem from "@/app/_components/tri-item";
 import BigLink from "./_components/big-link";
 import LinkButton from "./_components/link-button";
 import CtaBanner from "./_components/cta-banner";
+import { assetPath } from "@/lib/asset-path";
 
 export default function Home() {
   return (
@@ -48,7 +49,7 @@ export default function Home() {
           <LinkButton href="/about">Learn more</LinkButton>
         </div>
         <img
-          src="/assets/home/desktop/bg-pattern-hero-home.svg"
+          src={assetPath("/assets/home/desktop/bg-pattern-hero-home.svg")}
           width="496"
           height="495"
           alt=""
@@ -62,7 +63,7 @@ export default function Home() {
           )}
         />
         <img
-          src="/assets/home/desktop/image-hero-phone.png"
+          src={assetPath("/assets/home/desktop/image-hero-phone.png")}
           width="624"
           height="913"
           alt="Phone"
@@ -97,7 +98,7 @@ export default function Home() {
       >
         <div className="lg:col-span-1">
           <BigLink
-            image="/assets/home/desktop/image-web-design-large.jpg"
+            image={assetPath("/assets/home/desktop/image-web-design-large.jpg")}
             title="Web Design" href="/web-design"
           />
         </div>
@@ -105,14 +106,14 @@ export default function Home() {
         <div className="flex flex-col gap-8 lg:col-span-1">
           <div>
             <BigLink
-              image="/assets/home/desktop/image-app-design.jpg"
+              image={assetPath("/assets/home/desktop/image-app-design.jpg")}
               title="App Design" href="/app-design"
             />
           </div>
 
           <div>
             <BigLink
-              image="/assets/home/desktop/image-graphic-design.jpg"
+              image={assetPath("/assets/home/desktop/image-graphic-design.jpg")}
               title="Graphic Design" href="/graphic-design"
             />
           </div>
@@ -133,7 +134,7 @@ export default function Home() {
         <div className="lg:col-span-1">
           <TriItem
             bgRot={0}
-            image="/assets/home/desktop/illustration-passionate.svg"
+            image={assetPath("/assets/home/desktop/illustration-passionate.svg")}
             title="Passionate"
           >
             <p className="text-dark-grey leading-[1.625]">
@@ -147,7 +148,7 @@ export default function Home() {
         <div className="lg:col-span-1">
           <TriItem
             bgRot={270}
-            image="/assets/home/desktop/illustration-resourceful.svg"
+            image={assetPath("/assets/home/desktop/illustration-resourceful.svg")}
             title="Resourceful"
           >
             <p className="text-dark-grey leading-[1.625]">
@@ -161,7 +162,7 @@ export default function Home() {
         <div className="lg:col-span-1">
           <TriItem
             bgRot={90}
-            image="/assets/home/desktop/illustration-friendly.svg"
+            image={assetPath("/assets/home/desktop/illustration-friendly.svg")}
             title="Friendly"
           >
             <p className="text-dark-grey leading-[1.625]">

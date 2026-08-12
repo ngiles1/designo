@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const basePath = '/designo';
+
 const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
@@ -7,8 +9,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/designo',
-  assetPrefix: '/designo/',
+  basePath,
+  assetPrefix: `${basePath}/`,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 // export default nextConfig;

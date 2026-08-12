@@ -2,6 +2,7 @@ import clsx from "clsx";
 import ProjectCard from "@/app/_components/project-card";
 import BigLink from "@/app/_components/big-link";
 import CtaBanner from "@/app/_components/cta-banner";
+import { assetPath } from "@/lib/asset-path";
 
 const projects = [
   {
@@ -53,7 +54,7 @@ export default function AppDesign() {
         )}
       >
         <img
-          src="/assets/app-design/desktop/bg-pattern-intro-app.svg"
+          src={assetPath("/assets/app-design/desktop/bg-pattern-intro-app.svg")}
           alt=""
           className={clsx(
             "absolute",
@@ -95,7 +96,7 @@ export default function AppDesign() {
         )}
       >
         {projects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+          <ProjectCard key={project.title} {...project} image={assetPath(project.image)} />
         ))}
       </section>
 
@@ -110,12 +111,12 @@ export default function AppDesign() {
         )}
       >
         <BigLink
-          image="/assets/home/desktop/image-web-design-small.jpg"
+          image={assetPath("/assets/home/desktop/image-web-design-small.jpg")}
           title="Web Design"
           href="/web-design"
         />
         <BigLink
-          image="/assets/home/desktop/image-graphic-design.jpg"
+          image={assetPath("/assets/home/desktop/image-graphic-design.jpg")}
           title="Graphic Design"
           href="/graphic-design"
         />
