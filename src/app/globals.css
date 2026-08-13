@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  /* Drop the 2xl tier so `container` caps at xl (80rem) instead of 96rem. */
+  --breakpoint-2xl: initial;
+
   --color-peach: #E7816B;
   --color-light-peach: #FFAD9B;
   --color-black: #1D1C1E;
