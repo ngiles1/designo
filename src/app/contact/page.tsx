@@ -35,17 +35,17 @@ function validate(values: FormValues): FormErrors {
   const errors: FormErrors = {};
 
   if (!values.name.trim()) {
-    errors.name = "Name is required";
+    errors.name = "Can't be empty";
   }
 
   if (!values.email.trim()) {
-    errors.email = "Email is required";
+    errors.email = "Can't be empty";
   } else if (!emailPattern.test(values.email.trim())) {
-    errors.email = "Please enter a valid email address";
+    errors.email = "Please use a valid email address";
   }
 
   if (!values.message.trim()) {
-    errors.message = "Message is required";
+    errors.message = "Can't be empty";
   }
 
   return errors;
