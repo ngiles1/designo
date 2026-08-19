@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { assetPath } from "@/lib/asset-path";
 
 type BigLinkProps = {
   image: string;
@@ -71,7 +70,7 @@ export default function BigLink({ image, title, href }: BigLinkProps) {
         >
           View projects
           <Image
-            src={assetPath("/assets/shared/desktop/icon-right-arrow.svg")}
+            src={"/assets/shared/desktop/icon-right-arrow.svg"}
             alt=""
             width={7}
             height={10}

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx";
 import LinkButton from "./link-button";
-import { assetPath } from "@/lib/asset-path";
 
 export default function CtaBanner() {
   return (
@@ -28,7 +27,7 @@ export default function CtaBanner() {
         )}
       >
         <Image
-          src={assetPath("/assets/shared/desktop/bg-pattern-call-to-action.svg")}
+          src={"/assets/shared/desktop/bg-pattern-call-to-action.svg"}
           alt=""
           fill
           className="object-cover -z-1"

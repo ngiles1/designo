@@ -4,7 +4,6 @@ import { useState, type FormEvent } from "react";
 import clsx from "clsx";
 import TriItem from "@/app/_components/tri-item";
 import LinkButton from "@/app/_components/link-button";
-import { assetPath } from "@/lib/asset-path";
 
 const fieldBaseClasses = clsx(
   "w-full",
@@ -94,10 +93,10 @@ export default function Contact() {
         <picture className="contents">
           <source
             media="(min-width: 640px)"
-            srcSet={assetPath("/assets/contact/desktop/bg-pattern-hero-desktop.svg")}
+            srcSet={"/assets/contact/desktop/bg-pattern-hero-desktop.svg"}
           />
           <img
-            src={assetPath("/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg")}
+            src={"/assets/contact/mobile/bg-pattern-hero-contact-mobile.svg"}
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -252,7 +251,7 @@ export default function Contact() {
       >
         <TriItem
           bgRot={0}
-          image={assetPath("/assets/shared/desktop/illustration-canada.svg")}
+          image={"/assets/shared/desktop/illustration-canada.svg"}
           title="Canada"
         >
           <LinkButton href="/locations" variant="peach">
@@ -262,7 +261,7 @@ export default function Contact() {
 
         <TriItem
           bgRot={270}
-          image={assetPath("/assets/shared/desktop/illustration-australia.svg")}
+          image={"/assets/shared/desktop/illustration-australia.svg"}
           title="Australia"
         >
           <LinkButton href="/locations" variant="peach">
@@ -272,7 +271,7 @@ export default function Contact() {
 
         <TriItem
           bgRot={90}
-          image={assetPath("/assets/shared/desktop/illustration-united-kingdom.svg")}
+          image={"/assets/shared/desktop/illustration-united-kingdom.svg"}
           title="United Kingdom"
         >
           <LinkButton href="/locations" variant="peach">

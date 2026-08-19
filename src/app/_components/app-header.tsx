@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { assetPath } from "@/lib/asset-path";
 
 export default function AppHeader() {
   const [mobMenuOpen, setMobMenuOpen] = useState<boolean>(false);
@@ -14,7 +13,7 @@ export default function AppHeader() {
     <header className="flex items-center justify-between h-18 max-sm:px-2 sm:py-12">
       <Link href="/">
         <Image
-          src={assetPath("/assets/shared/desktop/logo-dark.svg")}
+          src={"/assets/shared/desktop/logo-dark.svg"}
           alt="Designo"
           width={202}
           height={27}
@@ -29,11 +28,11 @@ export default function AppHeader() {
           className="cursor-pointer sm:hidden relative z-10"
         >
           <Image
-            src={assetPath(
+            src={
               mobMenuOpen
                 ? "/assets/shared/mobile/icon-close.svg"
                 : "/assets/shared/mobile/icon-hamburger.svg"
-            )}
+            }
             alt=""
             width={20}
             height={20}

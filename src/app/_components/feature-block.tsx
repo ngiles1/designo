@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import clsx from "clsx";
-import { assetPath } from "@/lib/asset-path";
 
 type FeatureBlockProps = {
   section: string;
@@ -32,14 +31,14 @@ export default function FeatureBlock({
       <picture className="contents">
         <source
           media="(min-width: 1024px)"
-          srcSet={assetPath(`/assets/${section}/desktop/${imageName}`)}
+          srcSet={`/assets/${section}/desktop/${imageName}`}
         />
         <source
           media="(min-width: 640px)"
-          srcSet={assetPath(`/assets/${section}/tablet/${imageName}`)}
+          srcSet={`/assets/${section}/tablet/${imageName}`}
         />
         <img
-          src={assetPath(`/assets/${section}/mobile/${imageName}`)}
+          src={`/assets/${section}/mobile/${imageName}`}
           alt=""
           className="w-full h-80 object-cover lg:w-1/2 lg:h-auto"
         />
@@ -57,7 +56,7 @@ export default function FeatureBlock({
         )}
       >
         <Image
-          src={assetPath("/assets/shared/desktop/bg-pattern-two-circles.svg")}
+          src={"/assets/shared/desktop/bg-pattern-two-circles.svg"}
           alt=""
           width={584}
           height={292}

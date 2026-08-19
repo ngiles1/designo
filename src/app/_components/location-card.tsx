@@ -1,6 +1,5 @@
 import Image from "next/image";
 import clsx from "clsx";
-import { assetPath } from "@/lib/asset-path";
 
 type LocationCardProps = {
   reverse?: boolean;
@@ -36,10 +35,10 @@ export default function LocationCard({
       <picture className="contents">
         <source
           media="(min-width: 1024px)"
-          srcSet={assetPath(`/assets/locations/desktop/${desktopMap}`)}
+          srcSet={`/assets/locations/desktop/${desktopMap}`}
         />
         <img
-          src={assetPath(`/assets/locations/tablet/${tabletMap}`)}
+          src={`/assets/locations/tablet/${tabletMap}`}
           alt=""
           className="w-full h-80 object-cover sm:rounded-2xl lg:w-[350px] lg:h-[326px] lg:max-w-[350px] lg:max-h-[326px]"
         />
@@ -59,7 +58,7 @@ export default function LocationCard({
         )}
       >
         <Image
-          src={assetPath("/assets/shared/desktop/bg-pattern-two-circles.svg")}
+          src={"/assets/shared/desktop/bg-pattern-two-circles.svg"}
           alt=""
           width={584}
           height={292}
